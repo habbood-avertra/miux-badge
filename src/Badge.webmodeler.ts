@@ -12,6 +12,7 @@ type VisibilityMap = {
 // tslint:disable-next-line class-name
 export class preview extends Component<BadgeContainerProps, {}> {
     render() {
+
         const message = BadgeContainer.validateProps(this.props);
         return createElement("div", { ref: this.parentInline },
             createElement(Alert, { bootstrapStyle: "danger", message, className: "widget-badge-alert" }),
@@ -28,13 +29,16 @@ export class preview extends Component<BadgeContainerProps, {}> {
 
     private transformProps(props: BadgeContainerProps): BadgeProps {
         const valueAttribute = props.valueAttribute ? props.valueAttribute.split(".")[2] : "";
+        const visibilityAttribute = props.visibilityAttribute ? Boolean(props.visibilityAttribute.split(".")[2]) : false;
+
         return {
             badgeType: props.badgeType,
             bootstrapStyle: props.bootstrapStyle,
             className: props.class,
             clickable: false,
             style: BadgeContainer.parseStyle(props.style),
-            value: valueAttribute ? "[" + valueAttribute + "]" : props.badgeValue
+            value: valueAttribute ? "[" + valueAttribute + "]" : props.badgeValue,
+            isVisible: visibilityAttribute
         };
     }
 }

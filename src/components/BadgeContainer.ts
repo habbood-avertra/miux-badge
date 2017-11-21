@@ -10,6 +10,7 @@ interface WrapperProps {
 }
 
 export interface BadgeContainerProps extends WrapperProps {
+    visibilityAttribute: string;
     valueAttribute: string;
     bootstrapStyle: BootstrapStyle;
     badgeType: "badge" | "label";
@@ -22,6 +23,7 @@ export interface BadgeContainerProps extends WrapperProps {
 interface BadgeContainerState {
     alertMessage?: string;
     value: string;
+    isVisible?: boolean;
 }
 
 type OnClickOptions = "doNothing" | "showPage" | "callMicroflow";
@@ -34,7 +36,8 @@ export default class BadgeContainer extends Component<BadgeContainerProps, Badge
 
         this.state = {
             alertMessage: BadgeContainer.validateProps(this.props),
-            value: BadgeContainer.getValue(this.props.valueAttribute, this.props.mxObject)
+            value: BadgeContainer.getValue(this.props.valueAttribute, this.props.mxObject),
+            isVisible: BadgeContainer.getVisibility(this.props.visibilityAttribute, this.props.mxObject)
         };
         this.subscriptionHandles = [];
         this.handleOnClick = this.handleOnClick.bind(this);
@@ -42,6 +45,7 @@ export default class BadgeContainer extends Component<BadgeContainerProps, Badge
     }
 
     render() {
+
         if (this.state.alertMessage) {
             return createElement(Alert, {
                 bootstrapStyle: "danger",
@@ -58,14 +62,16 @@ export default class BadgeContainer extends Component<BadgeContainerProps, Badge
             defaultValue: this.props.badgeValue,
             onClickAction: this.handleOnClick,
             style: BadgeContainer.parseStyle(this.props.style),
-            value: this.state.value
+            value: this.state.value,
+            isVisible: this.state.isVisible
         });
     }
 
     componentWillReceiveProps(newProps: BadgeContainerProps) {
         this.resetSubscriptions(newProps.mxObject);
         this.setState({
-            value: BadgeContainer.getValue(this.props.valueAttribute, newProps.mxObject)
+            value: BadgeContainer.getValue(this.props.valueAttribute, newProps.mxObject),
+            isVisible: BadgeContainer.getVisibility(this.props.visibilityAttribute, newProps.mxObject)
         });
     }
 
@@ -74,6 +80,7 @@ export default class BadgeContainer extends Component<BadgeContainerProps, Badge
     }
 
     private static getValue(attributeName: string, mxObject?: mendix.lib.MxObject): string {
+
         if (mxObject && attributeName) {
             const value = mxObject.get(attributeName);
             if (mxObject.isEnum(attributeName)) {
@@ -83,6 +90,17 @@ export default class BadgeContainer extends Component<BadgeContainerProps, Badge
         }
 
         return "";
+    }
+
+    private static getVisibility(attributeName: string, mxObject?: mendix.lib.MxObject): boolean {
+
+        if (mxObject && attributeName) {
+            const value = mxObject.get(attributeName);
+
+            return Boolean(value);
+        }
+
+        return false;
     }
 
     private resetSubscriptions(mxObject?: mendix.lib.MxObject) {
@@ -104,7 +122,8 @@ export default class BadgeContainer extends Component<BadgeContainerProps, Badge
 
     private handleSubscriptions() {
         this.setState({
-            value: BadgeContainer.getValue(this.props.valueAttribute, this.props.mxObject)
+            value: BadgeContainer.getValue(this.props.valueAttribute, this.props.mxObject),
+            isVisible: BadgeContainer.getVisibility(this.props.visibilityAttribute, this.props.mxObject)
         });
     }
 

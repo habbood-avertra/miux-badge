@@ -27,6 +27,14 @@
                 <translation lang="nl_NL">Badge</translation>
             </translations>
         </property>
+        <property key="visibilityAttribute" type="attribute" required="false">
+            <caption>Visibility attribute</caption>
+            <category>General</category>
+            <description>The attribute that contains the badge Visibility</description>
+            <attributeTypes>
+                <attributeType name="Boolean"/>
+            </attributeTypes>
+        </property>
         <property key="bootstrapStyle" type="enumeration" defaultValue="default">
             <caption>Badge style</caption>
             <category>Display</category>
@@ -41,7 +49,7 @@
                 <enumerationValue key="danger">Danger</enumerationValue>
             </enumerationValues>
         </property>
-        <property key="badgeType" type="enumeration" required="true" defaultValue="badge">  
+        <property key="badgeType" type="enumeration" defaultValue="badge">
             <caption>Type</caption>
             <category>Display</category>
             <description>Render it as either a badge or a color label</description>
