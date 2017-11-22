@@ -1,7 +1,7 @@
 import { Component, createElement } from "react";
 
-import { Badge, BootstrapStyle } from "./Badge";
-import { Alert } from "./Alert";
+import {Badge, BootstrapStyle} from "./badge";
+import {Alert} from "./alert";
 
 interface WrapperProps {
     "class"?: string;

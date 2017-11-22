@@ -1,7 +1,7 @@
 import { shallow } from "enzyme";
 import { createElement } from "react";
 
-import { Alert } from "../Alert";
+import {Alert} from "../alert";
 
 describe("Alert", () => {
     it("renders the structure when an alert message is specified", () => {

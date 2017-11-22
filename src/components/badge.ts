@@ -1,7 +1,7 @@
 import { SFC, createElement } from "react";
 import * as classNames from "classnames";
 
-import "../ui/Badge.css";
+import "../ui/badge.css";
 
 export interface BadgeProps {
     isVisible?: boolean;

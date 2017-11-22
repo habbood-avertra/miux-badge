@@ -1,6 +1,6 @@
 import { Component, createElement } from "react";
-import { Badge, BadgeProps } from "./components/Badge";
-import { Alert } from "./components/Alert";
+import {Badge, BadgeProps} from "./components/badge";
+import {Alert} from "./components/alert";
 import BadgeContainer, {BadgeContainerProps} from "./components/badge.container";
 
 declare function require(name: string): string;
@@ -44,7 +44,7 @@ export class preview extends Component<BadgeContainerProps, {}> {
 }
 
 export function getPreviewCss() {
-    return require("./ui/Badge.css");
+    return require("./ui/badge.css");
 }
 
 export function getVisibleProperties(valueMap: BadgeContainerProps, visibilityMap: VisibilityMap) {
