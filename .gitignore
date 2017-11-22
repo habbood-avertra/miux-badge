@@ -1,3 +1,4 @@
-dist/
+dist/*
+!dist/*.mpk
 localSettings.js
 node_modules/

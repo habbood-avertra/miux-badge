@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         compress: {
             dist: {
                 options: {
-                    archive: "./dist/" + pkg.version + "/" + pkg.widgetName + ".mpk",
+                    archive: "./dist/" + pkg.widgetName + ".mpk",
                     mode: "zip"
                 },
                 files: [ {
@@ -74,7 +74,7 @@ module.exports = function(grunt) {
 
         clean: {
             build: [
-                "./dist/" + pkg.version + "/" + pkg.widgetName + "/*",
+                "./dist/*.mpk",
                 "./dist/tmp/**/*",
                 "./dist/tsc/**/*",
                 "./dist/MxTestProject/deployment/web/widgets/" + pkg.widgetName + "/*",
