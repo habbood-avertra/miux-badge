@@ -1,7 +1,7 @@
 import { Component, createElement } from "react";
 import { Badge, BadgeProps } from "./components/Badge";
 import { Alert } from "./components/Alert";
-import BadgeContainer, { BadgeContainerProps } from "./components/BadgeContainer";
+import BadgeContainer, {BadgeContainerProps} from "./components/badge.container";
 
 declare function require(name: string): string;
 

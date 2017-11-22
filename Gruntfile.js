@@ -61,8 +61,8 @@ module.exports = function(grunt) {
         file_append: {
             addSourceURL: {
                 files: [ {
-                    append: "\n\n//# sourceURL=" + pkg.widgetName + ".webmodeler.js\n",
-                    input: "dist/tmp/src/" + pkg.widgetName + ".webmodeler.js"
+                    append: "\n\n//# sourceURL=" + pkg.name + ".webmodeler.js\n",
+                    input: "dist/tmp/src/" + pkg.name + ".webmodeler.js"
                 } ]
             }
         },

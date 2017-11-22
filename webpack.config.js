@@ -8,7 +8,7 @@ const widgetName = package.widgetName;
 const name = package.widgetName.toLowerCase();
 
 const widgetConfig = {
-    entry: `./src/components/${widgetName}Container.ts`,
+    entry: `./src/components/${name}.container.ts`,
     output: {
         path: path.resolve(__dirname, "dist/tmp"),
         filename: `src/com/mendix/widget/custom/${name}/${widgetName}.js`,
@@ -39,10 +39,10 @@ const widgetConfig = {
 };
 
 const previewConfig = {
-    entry: `./src/${widgetName}.webmodeler.ts`,
+    entry: `./src/${name}.webmodeler.ts`,
     output: {
         path: path.resolve(__dirname, "dist/tmp"),
-        filename: `src/${widgetName}.webmodeler.js`,
+        filename: `src/${name}.webmodeler.js`,
         libraryTarget: "commonjs"
     },
     resolve: {
