@@ -9,7 +9,8 @@ var tsCoverage = loadCoverage(path.join(root, "dist/testresults/coverage.json"))
 var jsCoverage = {};
 
 Object.keys(tsCoverage)
-    .forEach(function(tsFilePath) {
+    .forEach(function(tsFilePath)
+    {
         var jsFilePath = path.join(root, "dist/tsc", path.relative(root, tsFilePath)).replace(/\.ts$/, ".js");
         jsCoverage[jsFilePath] = tsCoverage[tsFilePath];
     });

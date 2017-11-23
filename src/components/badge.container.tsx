@@ -4,13 +4,15 @@ import {Component} from "react";
 import {Badge, BootstrapStyle} from "./badge";
 import {Alert} from "./alert";
 
-interface WrapperProps {
+interface WrapperProps
+{
     "class"?: string;
     mxObject?: mendix.lib.MxObject;
     style?: string;
 }
 
-export interface BadgeContainerProps extends WrapperProps {
+export interface BadgeContainerProps extends WrapperProps
+{
     visibilityAttribute: string;
     valueAttribute: string;
     bootstrapStyle: BootstrapStyle;
@@ -21,7 +23,8 @@ export interface BadgeContainerProps extends WrapperProps {
     page: string;
 }
 
-interface BadgeContainerState {
+interface BadgeContainerState
+{
     alertMessage?: string;
     value: string;
     isVisible?: boolean;
@@ -29,10 +32,12 @@ interface BadgeContainerState {
 
 type OnClickOptions = "doNothing" | "showPage" | "callMicroflow";
 
-export default class BadgeContainer extends Component<BadgeContainerProps, BadgeContainerState> {
+export default class BadgeContainer extends Component<BadgeContainerProps, BadgeContainerState>
+{
     private subscriptionHandles: number[];
 
-    constructor(props: BadgeContainerProps) {
+    constructor(props: BadgeContainerProps)
+    {
         super(props);
 
         this.state = {
@@ -45,8 +50,10 @@ export default class BadgeContainer extends Component<BadgeContainerProps, Badge
         this.handleSubscriptions = this.handleSubscriptions.bind(this);
     }
 
-    render() {
-        if (this.state.alertMessage) {
+    render()
+    {
+        if(this.state.alertMessage)
+        {
             return <Alert bootstrapStyle="danger" className="widget-badge-alert" message={this.state.alertMessage}/>
         }
 
@@ -62,7 +69,8 @@ export default class BadgeContainer extends Component<BadgeContainerProps, Badge
             isVisible={this.state.isVisible}/>
     }
 
-    componentWillReceiveProps(newProps: BadgeContainerProps) {
+    componentWillReceiveProps(newProps: BadgeContainerProps)
+    {
         this.resetSubscriptions(newProps.mxObject);
         this.setState({
             value: BadgeContainer.getValue(this.props.valueAttribute, newProps.mxObject),
@@ -70,15 +78,19 @@ export default class BadgeContainer extends Component<BadgeContainerProps, Badge
         });
     }
 
-    componentWillUnmount() {
+    componentWillUnmount()
+    {
         this.subscriptionHandles.forEach(window.mx.data.unsubscribe);
     }
 
-    private static getValue(attributeName: string, mxObject?: mendix.lib.MxObject): string {
+    private static getValue(attributeName: string, mxObject?: mendix.lib.MxObject): string
+    {
 
-        if (mxObject && attributeName) {
+        if(mxObject && attributeName)
+        {
             const value = mxObject.get(attributeName);
-            if (mxObject.isEnum(attributeName)) {
+            if(mxObject.isEnum(attributeName))
+            {
                 return mxObject.getEnumCaption(attributeName, value as string);
             }
             return value.toString();
@@ -87,9 +99,11 @@ export default class BadgeContainer extends Component<BadgeContainerProps, Badge
         return "";
     }
 
-    private static getVisibility(attributeName: string, mxObject?: mendix.lib.MxObject): boolean {
+    private static getVisibility(attributeName: string, mxObject?: mendix.lib.MxObject): boolean
+    {
 
-        if (mxObject && attributeName) {
+        if(mxObject && attributeName)
+        {
             const value = mxObject.get(attributeName);
 
             return Boolean(value);
@@ -98,10 +112,12 @@ export default class BadgeContainer extends Component<BadgeContainerProps, Badge
         return false;
     }
 
-    private resetSubscriptions(mxObject?: mendix.lib.MxObject) {
+    private resetSubscriptions(mxObject?: mendix.lib.MxObject)
+    {
         this.subscriptionHandles.forEach(window.mx.data.unsubscribe);
 
-        if (mxObject) {
+        if(mxObject)
+        {
             this.subscriptionHandles.push(window.mx.data.subscribe({
                 callback: this.handleSubscriptions,
                 guid: mxObject.getGuid()
@@ -115,43 +131,54 @@ export default class BadgeContainer extends Component<BadgeContainerProps, Badge
         }
     }
 
-    private handleSubscriptions() {
+    private handleSubscriptions()
+    {
         this.setState({
             value: BadgeContainer.getValue(this.props.valueAttribute, this.props.mxObject),
             isVisible: BadgeContainer.getVisibility(this.props.visibilityAttribute, this.props.mxObject)
         });
     }
 
-    public static validateProps(props: BadgeContainerProps): string {
+    public static validateProps(props: BadgeContainerProps): string
+    {
         let errorMessage = "";
-        if (props.onClickEvent === "callMicroflow" && !props.microflow) {
+        if(props.onClickEvent === "callMicroflow" && !props.microflow)
+        {
             errorMessage = "A 'Microflow' is required for 'Events' 'Call a microflow'";
-        } else if (props.onClickEvent === "showPage" && !props.page) {
+        }
+        else if(props.onClickEvent === "showPage" && !props.page)
+        {
             errorMessage = "A 'Page' is required for 'Events' 'Show a page'";
         }
-        if (errorMessage) {
+        if(errorMessage)
+        {
             errorMessage = `Error in configuration: ${errorMessage}`;
         }
 
         return errorMessage;
     }
 
-    private handleOnClick() {
-        const { mxObject, onClickEvent, microflow, page } = this.props;
-        if (!mxObject || !mxObject.getGuid()) {
+    private handleOnClick()
+    {
+        const {mxObject, onClickEvent, microflow, page} = this.props;
+        if(!mxObject || !mxObject.getGuid())
+        {
             return;
         }
         const context = new mendix.lib.MxContext();
         context.setContext(mxObject.getEntity(), mxObject.getGuid());
-        if (onClickEvent === "callMicroflow" && microflow && mxObject.getGuid()) {
+        if(onClickEvent === "callMicroflow" && microflow && mxObject.getGuid())
+        {
             window.mx.ui.action(microflow, {
                 error: error => window.mx.ui.error(`Error while executing microflow: ${microflow}: ${error.message}`),
                 params: {
                     applyto: "selection",
-                    guids: [ mxObject.getGuid() ]
+                    guids: [mxObject.getGuid()]
                 }
             });
-        } else if (onClickEvent === "showPage" && page && mxObject.getGuid()) {
+        }
+        else if(onClickEvent === "showPage" && page && mxObject.getGuid())
+        {
             window.mx.ui.openForm(page, {
                 context,
                 error: error => window.mx.ui.error(`Error while opening page ${page}: ${error.message}`)
@@ -159,17 +186,23 @@ export default class BadgeContainer extends Component<BadgeContainerProps, Badge
         }
     }
 
-    public static parseStyle(style = ""): {[key: string]: string} {
-        try {
-            return style.split(";").reduce<{[key: string]: string}>((styleObject, line) => {
+    public static parseStyle(style = ""): { [key: string]: string }
+    {
+        try
+        {
+            return style.split(";").reduce<{ [key: string]: string }>((styleObject, line) =>
+            {
                 const pair = line.split(":");
-                if (pair.length === 2) {
+                if(pair.length === 2)
+                {
                     const name = pair[0].trim().replace(/(-.)/g, match => match[1].toUpperCase());
                     styleObject[name] = pair[1].trim();
                 }
                 return styleObject;
             }, {});
-        } catch (error) {
+        }
+        catch(error)
+        {
             // tslint:disable-next-line no-console
             console.log("Failed to parse style", style, error);
         }

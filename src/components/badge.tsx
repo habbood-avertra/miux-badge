@@ -4,7 +4,8 @@ import * as classNames from "classnames";
 
 import "../ui/badge.css";
 
-export interface BadgeProps {
+export interface BadgeProps
+{
     isVisible?: boolean;
     badgeType: "badge" | "label";
     defaultValue?: string;
@@ -19,8 +20,10 @@ export interface BadgeProps {
 
 export type BootstrapStyle = "default" | "info" | "inverse" | "primary" | "danger" | "success" | "warning";
 
-export const Badge: SFC<BadgeProps> = (props) => {
-    if (props.isVisible) {
+export const Badge: SFC<BadgeProps> = (props) =>
+{
+    if(props.isVisible)
+    {
         return (
             <span
                 className=
@@ -42,7 +45,8 @@ export const Badge: SFC<BadgeProps> = (props) => {
             </span>
         );
     }
-    else {
+    else
+    {
         return null;
     }
 };

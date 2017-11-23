@@ -1,24 +1,29 @@
-.widget-badge-clickable {
+.widget-badge-clickable
+{
     cursor: pointer;
 }
 
-.widget-badge {
+.widget-badge
+{
     display: inline-block;
 }
 
-.widget-badge.badge:empty {
+.widget-badge.badge:empty
+{
     display: initial;
     /* Fix padding to stay round */
     padding: 3px 10px;
 }
 
-.widget-badge.label:empty {
+.widget-badge.label:empty
+{
     display: initial;
     /* Fix padding to stay square */
     padding: .2em .8em .3em;
 }
 
-.widget-badge.badge {
+.widget-badge.badge
+{
     min-width: 18px;
     min-height: 18px;
 }

@@ -3,21 +3,25 @@ import * as React from "react";
 import {SFC} from "react";
 import * as classNames from "classnames";
 
-export interface AlertProps {
+export interface AlertProps
+{
     message: string;
     className?: string;
     bootstrapStyle: "default" | "primary" | "success" | "info" | "warning" | "danger";
 }
 
-export const Alert: SFC<AlertProps> = ({className, bootstrapStyle, message}) => {
-    if (message) {
+export const Alert: SFC<AlertProps> = ({className, bootstrapStyle, message}) =>
+{
+    if(message)
+    {
         return (
             <div className={classNames(`alert alert-${bootstrapStyle}`, className)}>
                 {message}
             </div>
         );
     }
-    else {
+    else
+    {
         return null;
     }
 };

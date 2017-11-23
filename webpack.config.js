@@ -23,18 +23,20 @@ const widgetConfig = {
     module: {
         rules: [
             {test: /\.tsx?$/, use: "ts-loader"},
-            { test: /\.css$/, loader: ExtractTextPlugin.extract({
+            {
+                test: /\.css$/, loader: ExtractTextPlugin.extract({
                 fallback: "style-loader",
                 use: "css-loader"
-            }) }
+            })
+            }
         ]
     },
     devtool: "source-map",
-    externals: [ "react", "react-dom" ],
+    externals: ["react", "react-dom"],
     plugins: [
-        new CopyWebpackPlugin([ { from: "src/**/*.xml" } ], { copyUnmodified: true }),
-        new ExtractTextPlugin({ filename: `./src/com/mendix/widget/custom/${name}/ui/${widgetName}.css` }),
-        new webpack.LoaderOptionsPlugin({ debug: true })
+        new CopyWebpackPlugin([{from: "src/**/*.xml"}], {copyUnmodified: true}),
+        new ExtractTextPlugin({filename: `./src/com/mendix/widget/custom/${name}/ui/${widgetName}.css`}),
+        new webpack.LoaderOptionsPlugin({debug: true})
     ]
 };
 
@@ -55,20 +57,22 @@ const previewConfig = {
                 compilerOptions: {
                     "module": "CommonJS",
                 }
-            }},
-            { test: /\.css$/, use: "raw-loader" },
-            { test: /\.scss$/, use: [
-                    { loader: "raw-loader" },
-                    { loader: "sass-loader" }
-                ]
+            }
+            },
+            {test: /\.css$/, use: "raw-loader"},
+            {
+                test: /\.scss$/, use: [
+                {loader: "raw-loader"},
+                {loader: "sass-loader"}
+            ]
             }
         ]
     },
     devtool: "inline-source-map",
-    externals: [ "react", "react-dom" ],
+    externals: ["react", "react-dom"],
     plugins: [
-        new webpack.LoaderOptionsPlugin({ debug: true })
+        new webpack.LoaderOptionsPlugin({debug: true})
     ]
 };
 
-module.exports = [ widgetConfig, previewConfig ];
+module.exports = [widgetConfig, previewConfig];

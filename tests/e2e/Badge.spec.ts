@@ -2,8 +2,10 @@ import homepage from "./pages/home.page";
 
 const caption = "New";
 const testValue = "Test";
-describe("Badge", () => {
-    it("should render a badge with a caption", () => {
+describe("Badge", () =>
+{
+    it("should render a badge with a caption", () =>
+    {
         homepage.open();
         homepage.badge.waitForVisible();
 
@@ -11,7 +13,8 @@ describe("Badge", () => {
         expect(badge).toContain(caption);
     });
 
-    it("renders with Bootstrap style success when style is sucess", () => {
+    it("renders with Bootstrap style success when style is sucess", () =>
+    {
         homepage.open();
         homepage.badgeSuccess.waitForVisible();
 
@@ -19,7 +22,8 @@ describe("Badge", () => {
         expect(classname).toContain("rgba(140,193,82,1)");
     });
 
-    it("renders with Bootstrap style danger when style is danger", () => {
+    it("renders with Bootstrap style danger when style is danger", () =>
+    {
         homepage.open();
         homepage.badgeDanger.waitForVisible();
 
@@ -27,7 +31,8 @@ describe("Badge", () => {
         expect(classname).toContain("rgba(217,83,79,1)");
     });
 
-    it("caption should change when updated", () => {
+    it("caption should change when updated", () =>
+    {
         homepage.open();
         homepage.input.waitForVisible();
         homepage.badge.waitForVisible();
@@ -39,8 +44,10 @@ describe("Badge", () => {
     });
 });
 
-describe("label", () => {
-    it("should render a label with a caption", () => {
+describe("label", () =>
+{
+    it("should render a label with a caption", () =>
+    {
         homepage.open();
         homepage.label.waitForVisible();
 
@@ -48,7 +55,8 @@ describe("label", () => {
         expect(label).toContain(caption);
     });
 
-    it("renders with Bootstrap style success when style is sucess", () => {
+    it("renders with Bootstrap style success when style is sucess", () =>
+    {
         homepage.open();
         homepage.labelSuccess.waitForVisible();
 
@@ -56,7 +64,8 @@ describe("label", () => {
         expect(classname).toContain("rgba(140,193,82,1)");
     });
 
-    it("renders with Bootstrap style danger when style is danger", () => {
+    it("renders with Bootstrap style danger when style is danger", () =>
+    {
         homepage.open();
         homepage.labelDanger.waitForVisible();
 
@@ -64,7 +73,8 @@ describe("label", () => {
         expect(classname).toContain("rgba(217,83,79,1)");
     });
 
-    it("caption should change when updated", () => {
+    it("caption should change when updated", () =>
+    {
         homepage.open();
         homepage.input.waitForVisible();
         homepage.label.waitForVisible();
