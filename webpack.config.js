@@ -8,21 +8,21 @@ const widgetName = package.widgetName;
 const name = package.widgetName.toLowerCase();
 
 const widgetConfig = {
-    entry: `./src/components/${name}.container.ts`,
+    entry: `./src/components/${name}.container.tsx`,
     output: {
         path: path.resolve(__dirname, "dist/tmp"),
         filename: `src/com/mendix/widget/custom/${name}/${widgetName}.js`,
         libraryTarget: "umd"
     },
     resolve: {
-        extensions: [ ".ts", ".js" ],
+        extensions: [".ts", ".tsx", ".js"],
         alias: {
             "tests": path.resolve(__dirname, "./tests")
         }
     },
     module: {
         rules: [
-            { test: /\.ts$/, use: "ts-loader" },
+            {test: /\.tsx?$/, use: "ts-loader"},
             { test: /\.css$/, loader: ExtractTextPlugin.extract({
                 fallback: "style-loader",
                 use: "css-loader"
@@ -39,18 +39,19 @@ const widgetConfig = {
 };
 
 const previewConfig = {
-    entry: `./src/${name}.webmodeler.ts`,
+    entry: `./src/${name}.webmodeler.tsx`,
     output: {
         path: path.resolve(__dirname, "dist/tmp"),
         filename: `src/${name}.webmodeler.js`,
         libraryTarget: "commonjs"
     },
     resolve: {
-        extensions: [ ".ts", ".js" ]
+        extensions: [".ts", ".tsx", ".js"]
     },
     module: {
         rules: [
-            { test: /\.ts$/, loader: "ts-loader", options: {
+            {
+                test: /\.tsx$/, loader: "ts-loader", options: {
                 compilerOptions: {
                     "module": "CommonJS",
                 }

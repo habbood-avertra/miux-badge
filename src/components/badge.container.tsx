@@ -1,4 +1,5 @@
-import { Component, createElement } from "react";
+import * as React from "react";
+import {Component} from "react";
 
 import {Badge, BootstrapStyle} from "./badge";
 import {Alert} from "./alert";
@@ -45,26 +46,20 @@ export default class BadgeContainer extends Component<BadgeContainerProps, Badge
     }
 
     render() {
-
         if (this.state.alertMessage) {
-            return createElement(Alert, {
-                bootstrapStyle: "danger",
-                className: "widget-badge-alert",
-                message: this.state.alertMessage
-            });
+            return <Alert bootstrapStyle="danger" className="widget-badge-alert" message={this.state.alertMessage}/>
         }
 
-        return createElement(Badge, {
-            badgeType: this.props.badgeType,
-            bootstrapStyle: this.props.bootstrapStyle,
-            className: this.props.class,
-            clickable: this.props.onClickEvent !== "doNothing",
-            defaultValue: this.props.badgeValue,
-            onClickAction: this.handleOnClick,
-            style: BadgeContainer.parseStyle(this.props.style),
-            value: this.state.value,
-            isVisible: this.state.isVisible
-        });
+        return <Badge
+            badgeType={this.props.badgeType}
+            bootstrapStyle={this.props.bootstrapStyle}
+            className={this.props.class}
+            clickable={this.props.onClickEvent !== "doNothing"}
+            defaultValue={this.props.badgeValue}
+            onClickAction={this.handleOnClick}
+            style={BadgeContainer.parseStyle(this.props.style)}
+            value={this.state.value}
+            isVisible={this.state.isVisible}/>
     }
 
     componentWillReceiveProps(newProps: BadgeContainerProps) {
