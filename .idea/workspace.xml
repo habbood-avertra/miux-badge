@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b00924a-10b5-44fc-b739-042cd5e0f69f" name="Default" comment="- added tsx support.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/Badge.mpk" afterPath="$PROJECT_DIR$/dist/Badge.mpk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/karma.conf.js" afterPath="$PROJECT_DIR$/karma.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/badge.webmodeler.tsx" afterPath="$PROJECT_DIR$/src/badge.webmodeler.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/badge.xml" afterPath="$PROJECT_DIR$/src/badge.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/__tests__/alert.spec.ts" afterPath="$PROJECT_DIR$/src/components/__tests__/alert.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/__tests__/badge.spec.ts" afterPath="$PROJECT_DIR$/src/components/__tests__/badge.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/alert.tsx" afterPath="$PROJECT_DIR$/src/components/alert.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/badge.container.tsx" afterPath="$PROJECT_DIR$/src/components/badge.container.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/badge.tsx" afterPath="$PROJECT_DIR$/src/components/badge.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/badge.css" afterPath="$PROJECT_DIR$/src/ui/badge.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/e2e/Badge.spec.ts" afterPath="$PROJECT_DIR$/tests/e2e/Badge.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/e2e/pages/home.page.ts" afterPath="$PROJECT_DIR$/tests/e2e/pages/home.page.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/e2e/tsconfig.json" afterPath="$PROJECT_DIR$/tests/e2e/tsconfig.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/e2e/wdio.conf.js" afterPath="$PROJECT_DIR$/tests/e2e/wdio.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/helpers/structureMatcher.ts" afterPath="$PROJECT_DIR$/tests/helpers/structureMatcher.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/matchers.ts" afterPath="$PROJECT_DIR$/tests/matchers.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/remap.js" afterPath="$PROJECT_DIR$/tests/remap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/customMatchers.d.ts" afterPath="$PROJECT_DIR$/typings/customMatchers.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/jasmine.d.ts" afterPath="$PROJECT_DIR$/typings/jasmine.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typings/webdriverio.d.ts" afterPath="$PROJECT_DIR$/typings/webdriverio.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xsd/widget.xsd" afterPath="$PROJECT_DIR$/xsd/widget.xsd" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -198,6 +173,10 @@
               <item name="src" type="cbb8eebc:String" user="src" />
               <item name="ui" type="cbb8eebc:String" user="ui" />
             </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="dist" type="cbb8eebc:String" user="dist" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -260,7 +239,7 @@
       <workItem from="1511250312958" duration="408000" />
       <workItem from="1511251614875" duration="16428000" />
       <workItem from="1511352374780" duration="5747000" />
-      <workItem from="1511421665200" duration="7055000" />
+      <workItem from="1511421665200" duration="7114000" />
     </task>
     <task id="LOCAL-00001" summary="Added webstorm git files.">
       <created>1511251714390</created>
@@ -332,11 +311,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511437628887</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="- added tsx support.">
+      <created>1511438570031</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1511438570031</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32341000" />
+    <option name="totallyTimeSpent" value="32400000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
