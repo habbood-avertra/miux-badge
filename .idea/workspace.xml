@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b00924a-10b5-44fc-b739-042cd5e0f69f" name="Default" comment="- added tsx support.">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/Badge.mpk" afterPath="" />
+    <list default="true" id="2b00924a-10b5-44fc-b739-042cd5e0f69f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/miux-badge.mpk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -188,6 +187,11 @@
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="miux-badge" type="cbb8eebc:String" user="miux-badge" />
+              <item name="assets" type="cbb8eebc:String" user="assets" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="miux-badge" type="cbb8eebc:String" user="miux-badge" />
               <item name="src" type="cbb8eebc:String" user="src" />
             </path>
             <path>
@@ -276,7 +280,7 @@
       <workItem from="1511451709251" duration="208000" />
       <workItem from="1511686152104" duration="676000" />
       <workItem from="1511767340644" duration="1959000" />
-      <workItem from="1511855236043" duration="1341000" />
+      <workItem from="1511855236043" duration="1851000" />
     </task>
     <task id="LOCAL-00001" summary="Added webstorm git files.">
       <created>1511251714390</created>
@@ -355,11 +359,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511438570031</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="- Update mpk name to be miux-badge.">
+      <created>1511862780049</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1511862780049</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36749000" />
+    <option name="totallyTimeSpent" value="37259000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -372,13 +383,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2983631" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5877617" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5716586" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5716586" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47181964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -411,7 +421,8 @@
     <MESSAGE value="- updated .gitignore file to exclude the *.mpk files.&#10;- updated gruntfile to put mpk file at dist root." />
     <MESSAGE value="- renamed files." />
     <MESSAGE value="- added tsx support." />
-    <option name="LAST_COMMIT_MESSAGE" value="- added tsx support." />
+    <MESSAGE value="- Update mpk name to be miux-badge." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Update mpk name to be miux-badge." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
