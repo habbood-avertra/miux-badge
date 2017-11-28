@@ -11,6 +11,9 @@ const webpackConfigRelease = webpackConfig.map(config => merge(config, {
 module.exports = function(grunt)
 {
     const pkg = grunt.file.readJSON("package.json");
+    const mpkPrefix = 'miux-';
+    const mpkName = mpkPrefix + pkg.name + '.mpk';
+
     grunt.initConfig({
 
         watch: {
@@ -27,7 +30,7 @@ module.exports = function(grunt)
         compress: {
             dist: {
                 options: {
-                    archive: "./dist/" + pkg.widgetName + ".mpk",
+                    archive: "./dist/" + mpkName,
                     mode: "zip"
                 },
                 files: [{
@@ -53,7 +56,7 @@ module.exports = function(grunt)
                 files: [{
                     dest: "./dist/MxTestProject/widgets",
                     cwd: "./dist/" + pkg.version + "/",
-                    src: [pkg.widgetName + ".mpk"],
+                    src: [mpkName],
                     expand: true
                 }]
             }
@@ -79,7 +82,7 @@ module.exports = function(grunt)
                 "./dist/tmp/**/*",
                 "./dist/tsc/**/*",
                 "./dist/MxTestProject/deployment/web/widgets/" + pkg.widgetName + "/*",
-                "./dist/MxTestProject/widgets/" + pkg.widgetName + ".mpk"
+                "./dist/MxTestProject/widgets/" + mpkName
             ]
         },
 
